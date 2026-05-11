@@ -6,6 +6,7 @@
 <title>登録ありがとうございます | 助産師ちる</title>
 <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
 <style>
+  * { box-sizing: border-box; }
   body {
     font-family: 'Klee One', 'Hiragino Kaku Gothic ProN', sans-serif;
     margin: 0;
@@ -158,12 +159,47 @@
     box-shadow: 0 8px 20px rgba(6, 199, 85, 0.5);
   }
 
+  /* シークレット特典 */
+  .secret-gift {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #FF9800;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+  }
+  .secret-gift-title {
+    color: #FF9800;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .secret-gift-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+  }
+  .secret-gift-img {
+    width: 110px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
   /* スマホ判定 */
   @media (max-width: 768px) {
     .container { padding: 35px 20px; }
     h1 { font-size: 22px; }
     .qr-area { display: none; }
     .line-btn-area { display: block; }
+    .secret-gift-content {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   .step-box {
@@ -253,12 +289,12 @@
       <h2>LINE登録で<br>さらに特典をプレゼント！</h2>
       
       <!-- シークレット特典 -->
-      <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #FF9800; box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);">
-        <p style="color: #FF9800; font-weight: bold; margin: 0 0 15px 0; font-size: 1.15em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <div class="secret-gift">
+        <p class="secret-gift-title">
           <span style="font-size: 1.3em;">🎁</span> LINE登録だけのシークレット特典
         </p>
-        <div style="display: flex; align-items: center; gap: 15px; text-align: left;">
-          <img src="/images/gift_04_labor.png" alt="陣痛促進ケア" style="width: 110px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <div class="secret-gift-content">
+          <img src="/images/gift_04_labor.png" alt="陣痛促進ケア" class="secret-gift-img">
           <div>
             <p style="margin: 0; font-weight: 600; color: #333; font-size: 1.05em; line-height: 1.4;">病院では教えてもらえない<br>「陣痛促進ケア」</p>
             <p style="margin: 6px 0 0 0; font-size: 0.85em; color: #666; line-height: 1.5;">お産が進まず困った時に、体を整えるだけで陣痛が強くなるケアを惜しみなくお伝えします。</p>
