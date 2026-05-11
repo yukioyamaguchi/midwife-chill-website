@@ -3,82 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>限定動画講座 | 助産師ちる</title>
-<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<title>限定プレゼント動画 | 助産師ちる</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Klee One', 'Hiragino Kaku Gothic ProN', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #4a3a3a;
-    background-image: url('/images/scene_001.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    line-height: 1.8;
-  }
-  .bg-overlay {
-    background: rgba(255, 255, 255, 0.85);
+    font-family: 'Zen Maru Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+    color: #5a4a42;
+    background: linear-gradient(180deg, #fff5f5 0%, #fff9f0 50%, #f0faf0 100%);
     min-height: 100vh;
-    padding: 50px 20px;
+    line-height: 1.9;
   }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid rgba(255,255,255,0.9);
-    backdrop-filter: blur(5px);
-  }
-  h1 {
-    font-size: 24px;
+
+  /* ヘッダー */
+  .header {
     text-align: center;
-    color: #3A3A3A;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #D47A7A;
-    padding-bottom: 15px;
+    padding: 40px 20px 20px;
+  }
+  .header-name {
+    font-size: 13px;
+    color: #d47b7b;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #6b8e6b;
+    line-height: 1.5;
+  }
+  .header h1 em {
+    color: #d47b7b;
+    font-style: normal;
+  }
+
+  /* メインコンテナ */
+  .main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  /* 動画セクション */
+  .video-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(180,140,120,0.1);
+    margin-bottom: 28px;
+  }
+  .video-label {
+    display: inline-block;
+    background: #f8b4b4;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 14px;
+    margin-bottom: 14px;
   }
   .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    background: #000;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    background: #1a1a1a;
   }
   .video-wrapper iframe {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     border: none;
   }
+
+  /* メッセージカード */
+  .msg-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(180,140,120,0.1);
+    margin-bottom: 28px;
+  }
+  .msg-card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b8e6b;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .msg-card p {
+    font-size: 15px;
+    color: #6a5a52;
+    margin-bottom: 12px;
+  }
+
+  /* チェックリスト */
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    font-size: 15px;
+    color: #6a5a52;
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #a8d5a0;
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  /* 注意メッセージ */
+  .note-box {
+    background: #fef6f0;
+    border-radius: 14px;
+    padding: 20px 24px;
+    border: 1px solid #f8e8dd;
+    margin-bottom: 28px;
+  }
+  .note-box p {
+    font-size: 14px;
+    color: #8a7a72;
+  }
+  .note-box strong {
+    color: #d47b7b;
+  }
+
+  /* LINE CTA */
+  .line-card {
+    background: linear-gradient(135deg, #fff5f5, #f0faf0);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid #e8e0d8;
+  }
+  .line-card h3 {
+    font-size: 18px;
+    color: #6b8e6b;
+    margin-bottom: 10px;
+  }
+  .line-card p {
+    font-size: 14px;
+    color: #6a5a52;
+    margin-bottom: 8px;
+  }
+  .line-btn {
+    display: inline-block;
+    background: #06c755;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 14px;
+    transition: transform 0.2s;
+  }
+  .line-btn:hover { transform: scale(1.03); }
+  .line-sub {
+    font-size: 11px;
+    color: #bbb;
+    margin-top: 10px;
+  }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 11px;
+    color: #ccc;
+  }
+
   @media (max-width: 600px) {
-    .container { padding: 25px 15px; }
-    h1 { font-size: 20px; }
+    .header { padding: 30px 15px 15px; }
+    .header h1 { font-size: 20px; }
+    .video-card, .msg-card, .line-card { padding: 20px 16px; }
+    .msg-card h2 { font-size: 16px; }
   }
 </style>
 </head>
 <body>
-<div class="bg-overlay">
-  <div class="container">
-    <h1>🎁 限定動画講座</h1>
-    
+
+<div class="header">
+  <p class="header-name">助産師ちる</p>
+  <h1>🎁 プレゼント動画を<br><em>お届けします</em></h1>
+</div>
+
+<div class="main">
+  <!-- 動画 -->
+  <div class="video-card">
+    <span class="video-label">限定プレゼント</span>
     <div class="video-wrapper">
-      <!-- vimeoなどの埋め込みコードをここに -->
-      <iframe src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    
-    <div style="text-align: center; margin-top: 40px; background: #fff; padding: 20px; border-radius: 8px; border: 1px dashed #D47A7A;">
-      <p style="font-weight: 600; color: #C25555; margin: 0;">※ここは動画視聴ページの仮枠です。</p>
-      <p style="font-size: 0.9em; margin: 5px 0 0 0;">VimeoのURLを教えていただければ、すぐに動画を埋め込みます！</p>
+      <iframe src="https://player.vimeo.com/video/1186589608?h=856e57dd91&badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="助産師ちる_マイナートラブル解決VSL"></iframe>
     </div>
   </div>
+
+  <!-- メッセージ -->
+  <div class="msg-card">
+    <h2>📝 この動画でお伝えしていること</h2>
+    <p>助産師ちるが、妊娠中の体の不調について大切なポイントをお話ししています。</p>
+    <ul class="checklist">
+      <li>妊娠中の不調は「仕方ない」で終わらせなくていい理由</li>
+      <li>多くのプレママが見落としている、不調の根本的な原因</li>
+      <li>今日からできるセルフケアのヒント</li>
+    </ul>
+  </div>
+
+  <!-- 注意 -->
+  <div class="note-box">
+    <p>💡 この動画は<strong>期間限定公開</strong>です。お時間のあるうちにご覧くださいね。Wi-Fi環境での視聴がおすすめです。</p>
+  </div>
+
+  <!-- LINE誘導 -->
+  <div class="line-card">
+    <h3>🌿 もっと詳しく知りたい方へ</h3>
+    <p>助産師ちるの<strong>公式LINE</strong>では、<br>動画では伝えきれなかったケア情報を<br>お届けしています。</p>
+    <p style="font-size:13px;">今ならLINE限定プレゼントもご用意しています 🎁</p>
+    <a class="line-btn" href="https://info.midwife-chill.com/line/open/ifcnHa72Bua0">LINEで友だち追加する</a>
+    <p class="line-sub">※タップするとLINEの友だち追加画面が開きます</p>
+  </div>
 </div>
+
+<div class="footer">© 助産師ちる All Rights Reserved.</div>
+
 </body>
 </html>
