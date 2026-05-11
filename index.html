@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>助産師ちる 無料プレゼント</title>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Klee One', 'Hiragino Kaku Gothic ProN', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4a3a3a;
+    /* スライドと同じ水彩画を背景に設定 */
+    background-image: url('./images/scene_001.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 1.8;
+  }
+  
+  /* スライドと同じ半透明の白オーバーレイ */
+  .bg-overlay {
+    background: rgba(255, 255, 255, 0.85);
+    min-height: 100vh;
+    padding: 50px 20px;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.9);
+    backdrop-filter: blur(5px);
+  }
+  
+  /* スライドと同じ視認性担保のアウトライン（白縁取り） */
+  h1, h2, h3, p, li {
+    text-shadow: 
+      1px 1px 0px #fff, -1px -1px 0px #fff,
+      1px -1px 0px #fff, -1px 1px 0px #fff,
+      0px 1px 0px #fff, 0px -1px 0px #fff,
+      1px 0px 0px #fff, -1px 0px 0px #fff,
+      0px 0px 6px rgba(255,255,255,0.8);
+  }
+  
+  .catch {
+    text-align: center;
+    font-weight: 600;
+    color: #C25555;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    color: #3A3A3A;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+  
+  /* 動画は埋め込まず、「サムネイル画像」を配置してフォームへ誘導 */
+  .video-thumbnail {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .video-thumbnail:hover {
+    transform: scale(1.02);
+  }
+  .video-thumbnail img {
+    width: 100%;
+    display: block;
+  }
+  .video-thumbnail::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  }
+  
+  .gifts {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px dashed #D47A7A;
+    margin-bottom: 40px;
+  }
+  .gifts p {
+    margin: 8px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+  .gift-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(212, 122, 122, 0.15);
+  }
+  .gift-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .gift-item img {
+    width: 140px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  .gift-item .gift-text p:first-child {
+    color: #C25555;
+  }
+  @media (max-width: 600px) {
+    .gift-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .gift-item img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+    }
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #D47A7A;
+    color: #fff !important;
+    text-align: center;
+    padding: 18px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: none; /* ボタン文字には縁取りをしない */
+    box-shadow: 0 6px 15px rgba(212, 122, 122, 0.4);
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background: #C25555;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 122, 122, 0.5);
+  }
+  
+  /* お客様の声（水彩画背景を活用） */
+  .voice {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  .voice-inner {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 6px;
+  }
+  .voice p {
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  /* プロフィール */
+  .profile {
+    margin-top: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #F0D5D5;
+  }
+  .profile h2 {
+    color: #C25555;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  .profile-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  /* ちるさんの似顔絵スケッチを使用 */
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: url('./images/chill_profile.png') center center / 135% no-repeat;
+    flex-shrink: 0;
+    box-shadow: none;
+    border: none;
+  }
+  
+  @media (max-width: 600px) {
+    .container { padding: 25px 15px; }
+    h1 { font-size: 22px; }
+    .profile-content { flex-direction: column; align-items: center; }
+    .btn { font-size: 18px; padding: 15px; width: 90%; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-overlay">
+  <div class="container">
+    
+    <p class="catch">【無料プレゼント】妊婦さん限定！</p>
+    <h1>「妊娠中だから仕方ない…」は<br>大きな間違いです。</h1>
+    
+    <!-- 実際の動画ではなく、動画に見立てたサムネイル画像（クリックでフォームへ） -->
+    <a href="#form" style="text-decoration: none;">
+      <div class="video-thumbnail">
+        <!-- スライドの1枚目を書き出した画像を使用 -->
+        <img src="output_slides.001.jpg" alt="動画講座のサムネイル">
+      </div>
+    </a>
+    
+    <div class="gifts">
+      <p style="color: #C25555; text-align: center; margin-bottom: 25px; font-size: 1.3em;">🎁 豪華4大プレゼント</p>
+      
+      <div class="gift-item">
+        <img src="./images/gift_01_video.png" alt="限定動画講座">
+        <div class="gift-text">
+          <p style="margin: 0;">① 限定動画講座</p>
+          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">腰痛、むくみ、お腹の張り、恥骨痛…。「妊娠中だから仕方ない」と我慢していませんか？ マイナートラブルが治らない「本当の理由」と、自宅でできる根本的なケア法を現役助産師がわかりやすく解説します。</p>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <img src="./images/gift_02_report.png" alt="限定レポート">
+        <div class="gift-text">
+          <p style="margin: 0;">② 限定レポート</p>
+          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">「妊娠中にやっておくべき子供の知能を高める7つの習慣」— 食事、睡眠、運動、胎教など、科学的根拠に基づいた7つの習慣を具体的にまとめました。お腹の中にいる今だからこそできることがあります。</p>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <img src="./images/gift_03_products.png" alt="育児物品 徹底解説">
+        <div class="gift-text">
+          <p style="margin: 0;">③ おすすめ母子のための育児物品 徹底解説</p>
+          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">寝床用品、抱っこ紐、ベビーカー、チャイルドシートなど、自分に合ったグッズを選ぶ方法をご紹介。人気だけど実は赤ちゃんに良くないものについての解説も。</p>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <img src="./images/gift_04_labor.png" alt="陣痛促進ケア">
+        <div class="gift-text">
+          <p style="margin: 0;">④ 病院では教えてもらえない「陣痛促進ケア」</p>
+          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">お産が進まず困った時に、体を整えるだけで陣痛が強くなるケアを惜しみなくお伝えします。</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#form" class="btn">今すぐ無料で受け取る</a>
+
+    <h2 style="text-align: center; margin-top: 60px; color: #555;">「もっと早く知りたかった！」<br>喜びの声が続出</h2>
+    
+    <!-- 声の背景には他のスライドの背景イラストを活用 -->
+    <div class="voice" style="background-image: url('./images/scene_012.jpg');">
+      <div class="voice-inner">
+        <p>「むくみやお腹の張りがなくなり、夜もぐっすり眠れるようになりました！」（妊娠7ヶ月・Aさん）</p>
+      </div>
+    </div>
+    <div class="voice" style="background-image: url('./images/scene_013.jpg');">
+      <div class="voice-inner">
+        <p>「妊娠線もできず、産後すぐにお腹が引っ込んで周りに驚かれました！」（産後3ヶ月・Bさん）</p>
+      </div>
+    </div>
+    <div class="voice" style="background-image: url('./images/scene_014.jpg');">
+      <div class="voice-inner">
+        <p>「整体に月に数万円かけても治らなかった腰痛が、自宅でのケアでスッキリしました！」（妊娠8ヶ月・Cさん）</p>
+      </div>
+    </div>
+    
+    <div class="profile">
+      <h2>プロフィール</h2>
+      <div class="profile-content">
+        <div class="profile-img"></div>
+        <div>
+          <h3 style="margin-top:0; color: #555;">助産師 ちる</h3>
+          <ul style="padding-left: 20px; margin-bottom: 20px; color: #444;">
+            <li>現役産婦人科助産師（年間2000件の出産がある病院で勤務）</li>
+            <li>累計サポート実績：20,000名以上</li>
+            <li><strong>現在は私自身も初めて出産を経験し、育休中です</strong></li>
+          </ul>
+          <p style="font-weight: 600; color: #C25555;">「妊婦さんの痛みを、当たり前にしたくない」</p>
+          <p>病院で毎日多くの妊婦さんと接する中で、「マイナートラブルは病気じゃないから様子見で」と根本的なケアをしてもらえないママたちを数多く見てきました。</p>
+          <p>当事者になって、ママたちの辛さがより深く分かるようになりました。「対症療法ではなく、自宅でできる根本的なケアを届けたい」。その想いで、この動画とレポートを作成しました。あなたが笑顔でマタニティライフを送り、元気な赤ちゃんと出会えることを心から応援しています。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 登録フォーム -->
+    <div id="form" style="margin-top: 60px; background: rgba(255,255,255,0.95); padding: 40px 20px; border-radius: 12px; text-align: center; border: 2px solid #E89A9A;">
+      <h3 style="color: #C25555; margin-top:0; font-size: 22px;">無料プレゼント受け取りフォーム</h3>
+      <p style="font-weight: 600;">この無料プレゼントは、いつ公開を停止するかわかりません。<br>手遅れになる前に、今すぐ以下のフォームから受け取ってください。</p>
+      
+      <form action="https://ai.fastfunnel.net/r/ifcnHa72Bua0/store" method="post" style="margin-top: 25px;">
+        <div style="margin-bottom: 15px;">
+          <label for="mail" style="display: block; font-weight: 600; margin-bottom: 8px; color: #555; text-align: left;">メールアドレス <span style="background: #C25555; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 5px;">必須</span></label>
+          <input id="mail" type="email" name="mail" required placeholder="example@email.com" style="width: 100%; padding: 14px 16px; border: 2px solid #E0C8C8; border-radius: 8px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: border 0.2s;" onfocus="this.style.borderColor='#D47A7A'" onblur="this.style.borderColor='#E0C8C8'">
+        </div>
+        <button type="submit" style="width: 100%; padding: 18px; background: #D47A7A; color: #fff; border: none; border-radius: 40px; font-size: 20px; font-weight: 600; font-family: inherit; cursor: pointer; box-shadow: 0 6px 15px rgba(212,122,122,0.4); transition: 0.2s;" onmouseover="this.style.background='#C25555';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D47A7A';this.style.transform='translateY(0)'">無料で今すぐ受け取る</button>
+        <p style="font-size: 12px; color: #999; margin-top: 12px; text-shadow: none;">※ご登録後すぐにプレゼントをお届けします。迷惑メールには入りません。</p>
+      </form>
+    </div>
+    
+  </div>
+</div>
+</body>
+</html>
