@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     color: #4a3a3a;
-    background-image: url('./images/scene_001.jpg'); 
+    background-image: url('/images/scene_001.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -216,7 +216,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: url('./images/chill_profile.png') center center / 135% no-repeat;
+    background: url('/images/chill_profile.png') center center / 135% no-repeat;
     flex-shrink: 0;
   }
   .profile-mini-text {
@@ -251,13 +251,26 @@
         </svg>
       </div>
       <h2>LINE登録で<br>さらに特典をプレゼント！</h2>
-      <p>LINEでは、メールではお届けできない<br><strong>限定コンテンツ</strong>や<strong>個別相談</strong>のご案内をお届けします。</p>
+      
+      <!-- シークレット特典 -->
+      <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #FF9800; box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);">
+        <p style="color: #FF9800; font-weight: bold; margin: 0 0 15px 0; font-size: 1.15em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span style="font-size: 1.3em;">🎁</span> LINE登録だけのシークレット特典
+        </p>
+        <div style="display: flex; align-items: center; gap: 15px; text-align: left;">
+          <img src="/images/gift_04_labor.png" alt="陣痛促進ケア" style="width: 110px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <div>
+            <p style="margin: 0; font-weight: 600; color: #333; font-size: 1.05em; line-height: 1.4;">病院では教えてもらえない<br>「陣痛促進ケア」</p>
+            <p style="margin: 6px 0 0 0; font-size: 0.85em; color: #666; line-height: 1.5;">お産が進まず困った時に、体を整えるだけで陣痛が強くなるケアを惜しみなくお伝えします。</p>
+          </div>
+        </div>
+      </div>
       
       <!-- PC: QRコード表示 -->
       <div class="qr-area">
         <p style="font-weight: 600; color: #333;">▼ スマホでQRコードを読み取ってください</p>
         <!-- ★ ここにLINE QRコード画像を配置 -->
-        <img src="./images/line_qr.png" alt="LINE友だち追加QRコード">
+        <img src="/images/line_qr.png" alt="LINE友だち追加QRコード">
         <p>カメラアプリまたはLINEアプリの<br>QRコードリーダーで読み取れます</p>
       </div>
 
