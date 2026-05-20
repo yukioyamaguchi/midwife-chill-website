@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>助産師ちるのおすすめグッズリスト</title>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Klee One', 'Hiragino Kaku Gothic ProN', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4a3a3a;
+    background-image: url('/images/scene_001.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 1.8;
+  }
+
+  .bg-overlay {
+    background: rgba(255, 255, 255, 0.88);
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+  }
+
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    padding: 45px 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+  }
+
+  h1, h2, h3, p, li, td, th {
+    text-shadow:
+      1px 1px 0px #fff, -1px -1px 0px #fff,
+      1px -1px 0px #fff, -1px 1px 0px #fff,
+      0px 1px 0px #fff, 0px -1px 0px #fff,
+      1px 0px 0px #fff, -1px 0px 0px #fff,
+      0px 0px 6px rgba(255,255,255,0.8);
+  }
+
+  /* ---- ヘッダー ---- */
+  .page-badge {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .page-badge span {
+    display: inline-block;
+    background: linear-gradient(135deg, #D47A7A, #E89A9A);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    text-shadow: none;
+  }
+
+  h1 {
+    font-size: 26px;
+    text-align: center;
+    color: #3A3A3A;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+  h1 .accent {
+    color: #C25555;
+  }
+
+  .intro {
+    text-align: center;
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.9;
+  }
+
+  /* ---- プロフィールバー ---- */
+  .profile-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,0.85);
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 1px solid #F0D5D5;
+    margin-bottom: 40px;
+  }
+  .profile-bar-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: url('/images/chill_profile.png') center center / 135% no-repeat;
+    flex-shrink: 0;
+  }
+  .profile-bar-text {
+    font-size: 0.9em;
+    color: #555;
+  }
+  .profile-bar-text strong {
+    color: #C25555;
+    font-size: 1.05em;
+  }
+
+  /* ---- カテゴリ ---- */
+  .category {
+    margin-bottom: 40px;
+  }
+  .category-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #C25555;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F0D5D5;
+  }
+  .category-title .emoji {
+    font-size: 1.3em;
+    text-shadow: none;
+  }
+
+  /* ---- 商品カード ---- */
+  .item-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(240, 213, 213, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 122, 122, 0.12);
+  }
+  .item-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D47A7A, #E89A9A);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    text-shadow: none;
+  }
+  .item-name {
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #3A3A3A;
+  }
+
+  .item-desc {
+    font-size: 0.93em;
+    color: #666;
+    margin: 0 0 12px 42px;
+    line-height: 1.7;
+  }
+
+  .item-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 42px;
+    padding: 8px 20px;
+    background: #D47A7A;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: none;
+    transition: 0.2s;
+    box-shadow: 0 3px 10px rgba(212, 122, 122, 0.25);
+  }
+  .item-link:hover {
+    background: #C25555;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(212, 122, 122, 0.35);
+  }
+  .item-link .arrow {
+    font-size: 11px;
+  }
+
+  /* ---- ちるの一言 ---- */
+  .chiru-note {
+    background: rgba(255,255,255,0.9);
+    border-left: 4px solid #D47A7A;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .chiru-note p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.9;
+    color: #555;
+  }
+  .chiru-note strong {
+    color: #C25555;
+  }
+
+  /* ---- 注意書き ---- */
+  .disclaimer {
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.8;
+    text-shadow: none;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 30px 18px; }
+    h1 { font-size: 21px; }
+    .item-desc { margin-left: 0; margin-top: 6px; }
+    .item-link { margin-left: 0; margin-top: 8px; }
+    .profile-bar { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-overlay">
+  <div class="container">
+
+    <div class="page-badge"><span>🎁 LINE登録者限定</span></div>
+    <h1>助産師ちるの<br><span class="accent">おすすめグッズリスト</span></h1>
+    <p class="intro">
+      現役助産師として2万人以上のママと赤ちゃんをケアしてきた経験から、<br>
+      本当に役立った厳選グッズだけをご紹介します。
+    </p>
+
+    <div class="profile-bar">
+      <div class="profile-bar-img"></div>
+      <div class="profile-bar-text">
+        <strong>助産師 ちる</strong><br>
+        産婦人科勤務（累計サポート2万人以上）／現在、第一子育児中
+      </div>
+    </div>
+
+    <!-- ===== カテゴリ1: 妊娠中のケア ===== -->
+    <div class="category">
+      <div class="category-title">
+        <span class="emoji">🤰</span> 妊娠中のケア・サポート
+      </div>
+
+      <div class="item-card" id="item-04">
+        <div class="item-header">
+          <span class="item-num">4</span>
+          <span class="item-name">トコちゃんベルト 骨盤ベルト</span>
+        </div>
+        <p class="item-desc">妊娠中〜産後の骨盤を支え、腰痛などを軽減するベルト。骨盤ケアの定番アイテムです。</p>
+        <a href="https://tocochan.net/" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-03">
+        <div class="item-header">
+          <span class="item-num">3</span>
+          <span class="item-name">トコちゃんベルト 厚手腹巻ロング</span>
+        </div>
+        <p class="item-desc">ベルトの肌への食い込みや、お腹の冷えを防ぐ腹巻。トコちゃんベルトと併用がおすすめです。</p>
+        <a href="https://tocochan.net/" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-06">
+        <div class="item-header">
+          <span class="item-num">6</span>
+          <span class="item-name">さらし（5m / 2.5m）</span>
+        </div>
+        <p class="item-desc">腹帯（安産祈願）や、胸の固定など多目的に使える綿布。昔から伝わる万能アイテムです。</p>
+        <a href="https://www.amazon.co.jp/s?k=%E3%81%95%E3%82%89%E3%81%97+%E8%85%B9%E5%B8%AF+%E7%B6%BF100+5m" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-05">
+        <div class="item-header">
+          <span class="item-num">5</span>
+          <span class="item-name">犬印 マタニティオールインワンパンツ</span>
+        </div>
+        <p class="item-desc">妊婦帯、腹巻、検診時にも便利な機能性パンツ。1枚で何役もこなしてくれます。</p>
+        <a href="https://www.amazon.co.jp/s?k=%E7%8A%AC%E5%8D%B0+%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%AF%E3%83%B3+%E3%83%9E%E3%82%BF%E3%83%8B%E3%83%86%E3%82%A3%E3%83%91%E3%83%B3%E3%83%84+HB8392" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-09">
+        <div class="item-header">
+          <span class="item-num">9</span>
+          <span class="item-name">ユニクロ マタニティレギンス</span>
+        </div>
+        <p class="item-desc">締め付けが少なく、お腹を優しく包む妊婦用レギンス。普段使いしやすく、コスパも◎。</p>
+        <a href="https://www.uniqlo.com/jp/ja/women/maternity" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-08">
+        <div class="item-header">
+          <span class="item-num">8</span>
+          <span class="item-name">ユニクロ 5本指ソックス</span>
+        </div>
+        <p class="item-desc">冷え対策や蒸れ防止、足元をしっかり踏ん張れる靴下。妊娠中の冷えは大敵です。</p>
+        <a href="https://www.uniqlo.com/jp/ja/women/underwear/socks/five-toe-socks" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- ===== カテゴリ2: 産後・体のケア ===== -->
+    <div class="category">
+      <div class="category-title">
+        <span class="emoji">💆‍♀️</span> 産後・体のケア
+      </div>
+
+      <div class="item-card" id="item-07">
+        <div class="item-header">
+          <span class="item-num">7</span>
+          <span class="item-name">竹虎 ソフラビレイ フリー</span>
+        </div>
+        <p class="item-desc">産後の腹部や患部の固定に用いる伸縮性腹帯。しっかりサポートしながら動きやすい設計です。</p>
+        <a href="https://www.amazon.co.jp/s?k=%E7%AB%B9%E8%99%8E+%E3%82%BD%E3%83%95%E3%83%A9%E3%83%93%E3%83%AC%E3%82%A4+%E3%83%95%E3%83%AA%E3%83%BC" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-11">
+        <div class="item-header">
+          <span class="item-num">11</span>
+          <span class="item-name">トコちゃん ネックピロー</span>
+        </div>
+        <p class="item-desc">首のコリやストレートネックをケアする専用枕。授乳中のママの首・肩の疲れにも。</p>
+        <a href="https://tocochan.net/" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- ===== カテゴリ3: 赤ちゃんの寝具・抱っこ ===== -->
+    <div class="category">
+      <div class="category-title">
+        <span class="emoji">👶</span> 赤ちゃんの寝具・抱っこ
+      </div>
+
+      <div class="item-card" id="item-02">
+        <div class="item-header">
+          <span class="item-num">2</span>
+          <span class="item-name">寧々家 うずまきクッション</span>
+        </div>
+        <p class="item-desc">赤ちゃんの Cカーブを保つ授乳・寝かしつけクッション。まんまるの姿勢で安心して眠れます。</p>
+        <a href="https://neneya.thebase.in/" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-12">
+        <div class="item-header">
+          <span class="item-num">12</span>
+          <span class="item-name">恵比寿家 抱っこぶとん</span>
+        </div>
+        <p class="item-desc">寝かしつけをスムーズにし、そのまま置ける小さなお布団。「背中スイッチ」対策の救世主です。</p>
+        <a href="https://futon-ebisuya.com/" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-10">
+        <div class="item-header">
+          <span class="item-num">10</span>
+          <span class="item-name">北極しろくま堂 キュット ミー！</span>
+        </div>
+        <p class="item-desc">肩への負担を抑え、密着感のある抱っこができるスリング。赤ちゃんもママも安心の密着感。</p>
+        <a href="https://babywearing.jp/" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- ===== カテゴリ4: 離乳食・口腔ケア ===== -->
+    <div class="category">
+      <div class="category-title">
+        <span class="emoji">🍼</span> 離乳食・口腔発達
+      </div>
+
+      <div class="item-card" id="item-01">
+        <div class="item-header">
+          <span class="item-num">1</span>
+          <span class="item-name">DEWU チューイー・チューブ</span>
+        </div>
+        <p class="item-desc">口腔運動の発達・歯固めに。赤ちゃんの「噛む力」を楽しく育てるチューブです。</p>
+        <a href="https://www.amazon.co.jp/s?k=Chewy+Tubes+%E6%AD%AF%E5%9B%BA%E3%82%81" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-13">
+        <div class="item-header">
+          <span class="item-num">13</span>
+          <span class="item-name">ウィルアシスト フィーリングスプーンミニ</span>
+        </div>
+        <p class="item-desc">口当たりが良く、介助もしやすい離乳食用スプーン。赤ちゃんのお口に優しい設計です。</p>
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%A6%E3%82%A3%E3%83%AB%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88+%E3%83%95%E3%82%A3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%83%97%E3%83%BC%E3%83%B3+%E3%83%9F%E3%83%8B" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-14">
+        <div class="item-header">
+          <span class="item-num">14</span>
+          <span class="item-name">ウィルアシスト チャイルドスプーンミニ</span>
+        </div>
+        <p class="item-desc">子どものお口のサイズに合わせた持ちやすいスプーン。自分で食べる練習にぴったりです。</p>
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%A6%E3%82%A3%E3%83%AB%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88+%E3%83%81%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%89%E3%82%B9%E3%83%97%E3%83%BC%E3%83%B3+%E3%83%9F%E3%83%8B" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+
+      <div class="item-card" id="item-15">
+        <div class="item-header">
+          <span class="item-num">15</span>
+          <span class="item-name">ウィルアシスト チャイルドライトフォークミニ</span>
+        </div>
+        <p class="item-desc">刺しやすく、食べこぼしにくい軽量設計のフォーク。小さな手でもしっかり持てます。</p>
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%A6%E3%82%A3%E3%83%AB%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88+%E3%83%81%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%89%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF+%E3%83%9F%E3%83%8B" class="item-link" target="_blank">購入ページを見る <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- ちるの一言 -->
+    <div class="chiru-note">
+      <p><strong>💡 ちるからのアドバイス</strong><br>
+      グッズは「人気だから」ではなく、<strong>あなたと赤ちゃんの状態に合ったもの</strong>を選ぶことが大切です。迷ったときは、LINEでお気軽にご相談くださいね。一緒に最適なものを見つけましょう！</p>
+    </div>
+
+    <p class="disclaimer">
+      ※ このページは助産師ちるのLINE登録者限定で公開しています。<br>
+      ※ 商品情報・価格は変更される場合があります。詳細は各販売サイトでご確認ください。<br>
+      ※ 購入リンクはアフィリエイトリンクを含む場合があります。
+    </p>
+
+  </div>
+</div>
+
+<footer style="text-align:center;padding:24px 16px;font-size:12px;color:#999;border-top:1px solid #eee;margin-top:40px">
+  <a href="https://www.cross-over-airline.com/tokusyoho/" target="_blank" style="color:#999;text-decoration:none;margin:0 12px">特定商取引法に基づく表記</a>｜<a href="https://www.cross-over-airline.com/privacy/" target="_blank" style="color:#999;text-decoration:none;margin:0 12px">プライバシーポリシー</a>
+  <p style="margin-top:8px">© 助産師ちる</p>
+</footer>
+
+</body>
+</html>
