@@ -33,14 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
     background: #fff;
-    z-index: 0;
-    /* 水彩画の透過を完全にブロック */
   }
 
   .hero-inner {
@@ -61,12 +54,12 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    background: #fff;
   }
   .phone-mockup {
     width: 100%;
     max-width: 420px;
     animation: floatPhone 4s ease-in-out infinite;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
     transition: transform 0.3s ease;
   }
   .phone-mockup:hover {
@@ -654,11 +647,7 @@
           </div>
           <button type="submit" class="submit-btn" id="submit-button">無料で今すぐ受け取る →</button>
           <p class="form-privacy">ご登録の方には助産師ちるのメールマガジンをお届けします。個人情報は厳重に管理し、配信停止はいつでも可能です。icloud.com、me.com、mac.com、hotmailはメールが届かないため登録できません。</p>
-          <div class="form-trust">
-            <div class="trust-item"><span class="trust-icon">🔒</span> SSL暗号化</div>
-            <div class="trust-item"><span class="trust-icon">🛡️</span> スパム配信なし</div>
-            <div class="trust-item"><span class="trust-icon">✉️</span> いつでも解除OK</div>
-          </div>
+
         </form>
 
       </div>
@@ -765,11 +754,7 @@
         </div>
         <button type="submit" class="submit-btn" id="bottom-submit-button">無料で今すぐ受け取る →</button>
         <p class="form-privacy">ご登録の方には助産師ちるのメールマガジンをお届けします。個人情報は厳重に管理し、配信停止はいつでも可能です。icloud.com、me.com、mac.com、hotmailはメールが届かないため登録できません。メールが迷惑メールフォルダに届く場合がありますので、受信ボックスに届かない場合はそちらもご確認ください。</p>
-        <div class="form-trust">
-          <div class="trust-item"><span class="trust-icon">🔒</span> SSL暗号化</div>
-          <div class="trust-item"><span class="trust-icon">🛡️</span> スパム配信なし</div>
-          <div class="trust-item"><span class="trust-icon">✉️</span> いつでも解除OK</div>
-        </div>
+
       </form>
     </div>
   </div>
