@@ -13,329 +13,749 @@
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>助産師ちる 無料プレゼント</title>
+<title>助産師ちる 無料プレゼント | 妊娠中のマイナートラブルを根本ケア</title>
+<meta name="description" content="現役助産師が教える、妊娠中の腰痛・むくみ・お腹の張りを自宅で改善する方法。限定動画講座＋レポートを無料プレゼント中。">
 <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     font-family: 'Klee One', 'Hiragino Kaku Gothic ProN', sans-serif;
-    margin: 0;
-    padding: 0;
     color: #4a3a3a;
-    /* スライドと同じ水彩画を背景に設定 */
-    background-image: url('/images/scene_001.jpg'); 
+    background-image: url('/images/scene_001.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     line-height: 1.8;
   }
-  
-  /* スライドと同じ半透明の白オーバーレイ */
-  .bg-overlay {
-    background: rgba(255, 255, 255, 0.85);
-    min-height: 100vh;
-    padding: 50px 20px;
-  }
-  
-  .container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid rgba(255,255,255,0.9);
-    backdrop-filter: blur(5px);
-  }
-  
-  /* スライドと同じ視認性担保のアウトライン（白縁取り） */
-  h1, h2, h3, p, li {
-    text-shadow: 
-      1px 1px 0px #fff, -1px -1px 0px #fff,
-      1px -1px 0px #fff, -1px 1px 0px #fff,
-      0px 1px 0px #fff, 0px -1px 0px #fff,
-      1px 0px 0px #fff, -1px 0px 0px #fff,
-      0px 0px 6px rgba(255,255,255,0.8);
-  }
-  
-  .catch {
-    text-align: center;
-    font-weight: 600;
-    color: #C25555;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    letter-spacing: 0.05em;
-  }
-  
-  h1 {
-    font-size: 28px;
-    text-align: center;
-    color: #3A3A3A;
-    line-height: 1.5;
-    margin-bottom: 40px;
-  }
-  
-  /* 動画は埋め込まず、「サムネイル画像」を配置してフォームへ誘導 */
-  .video-thumbnail {
+
+  /* --- HERO / FIRST VIEW --- */
+  .hero {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: transform 0.2s;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .video-thumbnail:hover {
-    transform: scale(1.02);
-  }
-  .video-thumbnail img {
-    width: 100%;
-    display: block;
-  }
-  .video-thumbnail::after {
-    content: '▶';
+  .hero::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-    color: rgba(255,255,255,0.9);
-    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,240,240,0.88) 100%);
+    z-index: 0;
   }
-  
-  .gifts {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 25px;
-    border-radius: 8px;
-    border: 2px dashed #D47A7A;
-    margin-bottom: 40px;
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 60px 40px;
+    align-items: center;
   }
-  .gifts p {
-    margin: 8px 0;
-    font-size: 1.1em;
+
+  /* --- LEFT COLUMN: Phone Mockup --- */
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .phone-mockup {
+    width: 100%;
+    max-width: 420px;
+    animation: floatPhone 4s ease-in-out infinite;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+    transition: transform 0.3s ease;
+  }
+  .phone-mockup:hover {
+    transform: scale(1.03);
+  }
+  @keyframes floatPhone {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .play-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #999;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .play-hint .arrow {
+    font-size: 20px;
+    color: #D47A7A;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* --- RIGHT COLUMN: Copy + Form --- */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tag-label {
+    display: inline-block;
+    background: linear-gradient(135deg, #D47A7A, #C25555);
+    color: #fff;
+    font-size: 13px;
     font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    width: fit-content;
+    box-shadow: 0 3px 10px rgba(212,122,122,0.3);
   }
-  .gift-item {
+
+  .hero-headline {
+    font-size: 28px;
+    font-weight: 600;
+    color: #3A3A3A;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff;
+  }
+  .hero-headline .accent {
+    color: #C25555;
+    font-size: 34px;
+    display: inline;
+  }
+  .hero-headline .mistake {
+    position: relative;
+    display: inline-block;
+  }
+  .hero-headline .mistake::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgba(212, 122, 122, 0.2);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 24px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff;
+  }
+
+  /* --- FORM CARD --- */
+  .form-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 2px solid #F0D5D5;
+    box-shadow: 0 12px 40px rgba(212,122,122,0.12);
+    backdrop-filter: blur(8px);
+  }
+  .form-card h3 {
+    text-align: center;
+    color: #C25555;
+    font-size: 18px;
+    margin-bottom: 6px;
+    text-shadow: none;
+  }
+  .form-card .form-sub {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .form-gifts {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .form-gift-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFF5F5;
+    border: 1px solid #F0D5D5;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8B5E5E;
+  }
+  .form-gift-badge .gift-icon {
+    font-size: 18px;
+  }
+  .form-group {
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 14px;
+  }
+  .form-group label .required {
+    background: #C25555;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .form-group input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #E0C8C8;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+    background: #FFFBFB;
+  }
+  .form-group input[type="email"]:focus {
+    border-color: #D47A7A;
+    box-shadow: 0 0 0 4px rgba(212,122,122,0.12);
+  }
+  .form-group input[type="email"]::placeholder {
+    color: #ccc;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #D47A7A, #C25555);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(212,122,122,0.4);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+    transform: rotate(45deg);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+  }
+  .submit-btn:hover {
+    background: linear-gradient(135deg, #C25555, #B04040);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212,122,122,0.5);
+  }
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .form-privacy {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 12px;
+    line-height: 1.7;
+    text-shadow: none;
+  }
+  .form-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #F0E0E0;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #999;
+  }
+  .trust-item .trust-icon {
+    font-size: 14px;
+    color: #D47A7A;
+  }
+
+  /* --- BELOW FOLD SECTIONS --- */
+  .section {
+    position: relative;
+    padding: 80px 20px;
+  }
+  .section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.88);
+    z-index: 0;
+  }
+  .section-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    color: #C25555;
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff;
+  }
+
+  /* --- Gift Section --- */
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .gift-card {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    margin-bottom: 22px;
-    padding-bottom: 22px;
-    border-bottom: 1px solid rgba(212, 122, 122, 0.15);
+    background: rgba(255,255,255,0.9);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #F0E0E0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  .gift-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+  .gift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
   }
-  .gift-item img {
+  .gift-card img {
     width: 140px;
     height: 105px;
     object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   }
-  .gift-item .gift-text p:first-child {
-    color: #C25555;
-  }
-  @media (max-width: 600px) {
-    .gift-item {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .gift-item img {
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-    }
-  }
-  
-  .btn {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    background: #D47A7A;
-    color: #fff !important;
+  .gift-card .gift-num {
+    display: inline-block;
+    background: linear-gradient(135deg, #D47A7A, #C25555);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
     text-align: center;
-    padding: 18px;
-    border-radius: 40px;
-    font-size: 20px;
+    border-radius: 50%;
+    font-size: 13px;
     font-weight: 600;
-    text-decoration: none;
-    text-shadow: none; /* ボタン文字には縁取りをしない */
-    box-shadow: 0 6px 15px rgba(212, 122, 122, 0.4);
-    transition: 0.2s;
+    margin-bottom: 6px;
+    text-shadow: none;
   }
-  .btn:hover {
-    background: #C25555;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 122, 122, 0.5);
+  .gift-card .gift-title {
+    font-weight: 600;
+    color: #C25555;
+    margin-bottom: 6px;
+    font-size: 15px;
   }
-  
-  /* お客様の声（水彩画背景を活用） */
-  .voice {
+  .gift-card .gift-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  /* --- Voice / Testimonials --- */
+  .voices-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .voice-card {
     background-size: cover;
     background-position: center;
-    position: relative;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
   }
-  .voice-inner {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    border-radius: 6px;
+  .voice-card:hover {
+    transform: translateY(-3px);
   }
-  .voice p {
-    margin: 0;
+  .voice-card-inner {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(4px);
+    padding: 24px;
+    border-radius: 12px;
+  }
+  .voice-card p {
     font-weight: 600;
+    font-size: 15px;
+    text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff;
   }
-  
-  /* プロフィール */
-  .profile {
-    margin-top: 60px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 8px;
+
+  /* --- Profile --- */
+  .profile-card {
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 16px;
     border: 1px solid #F0D5D5;
-  }
-  .profile h2 {
-    color: #C25555;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
   }
   .profile-content {
     display: flex;
     align-items: flex-start;
     gap: 30px;
   }
-  /* ちるさんの似顔絵スケッチを使用 */
   .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     background: url('/images/chill_profile.png') center center / 135% no-repeat;
     flex-shrink: 0;
-    box-shadow: none;
-    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   }
-  
+  .profile-card h3 {
+    margin-top: 0;
+    color: #555;
+    font-size: 18px;
+    text-shadow: none;
+  }
+  .profile-card ul {
+    padding-left: 20px;
+    margin: 12px 0 20px;
+    color: #555;
+    font-size: 14px;
+  }
+  .profile-card ul li {
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+  .profile-card .profile-quote {
+    font-weight: 600;
+    color: #C25555;
+    font-size: 15px;
+    margin-bottom: 12px;
+    text-shadow: none;
+  }
+  .profile-card .profile-bio {
+    font-size: 14px;
+    color: #666;
+    text-shadow: none;
+    line-height: 1.9;
+  }
+
+  /* --- Bottom CTA --- */
+  .bottom-cta {
+    position: relative;
+    padding: 80px 20px;
+    background-image: url('/images/scene_002.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .bottom-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.93) 0%, rgba(255,240,240,0.90) 100%);
+  }
+  .bottom-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .bottom-form-card {
+    background: rgba(255,255,255,0.97);
+    border-radius: 16px;
+    padding: 40px 32px;
+    border: 2px solid #E89A9A;
+    box-shadow: 0 12px 40px rgba(212,122,122,0.15);
+    text-align: center;
+  }
+  .bottom-form-card h3 {
+    color: #C25555;
+    font-size: 22px;
+    margin-bottom: 8px;
+    text-shadow: none;
+  }
+  .bottom-form-card .form-motivate {
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+    text-shadow: none;
+  }
+
+  /* --- Footer --- */
+  footer {
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+    background: #fff;
+  }
+  footer a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 12px;
+  }
+  footer a:hover {
+    color: #D47A7A;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero-left {
+      order: -1;
+    }
+    .phone-mockup {
+      max-width: 300px;
+    }
+    .tag-label {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-headline {
+      font-size: 22px;
+    }
+    .hero-headline .accent {
+      font-size: 26px;
+    }
+    .form-card {
+      padding: 24px 20px;
+    }
+  }
   @media (max-width: 600px) {
-    .container { padding: 25px 15px; }
-    h1 { font-size: 22px; }
-    .profile-content { flex-direction: column; align-items: center; }
-    .btn { font-size: 18px; padding: 15px; width: 100%; }
+    .hero-headline {
+      font-size: 20px;
+    }
+    .hero-headline .accent {
+      font-size: 24px;
+    }
+    .form-gifts {
+      flex-direction: column;
+      align-items: center;
+    }
+    .gift-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .gift-card img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+    }
+    .profile-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .bottom-form-card {
+      padding: 28px 20px;
+    }
   }
 </style>
 </head>
 <body>
-<div class="bg-overlay">
-  <div class="container">
-    
-    <p class="catch">【無料プレゼント】妊婦さん限定！</p>
-    <h1>「妊娠中だから仕方ない…」は<br>大きな間違いです。</h1>
-    
-    <!-- 実際の動画ではなく、動画に見立てたサムネイル画像（クリックでフォームへ） -->
-    <a href="#form" style="text-decoration: none;">
-      <div class="video-thumbnail">
-        <!-- スライドの1枚目を書き出した画像を使用 -->
-        <img src="/output_slides.001.jpg" alt="動画講座のサムネイル">
+
+<!-- ========== HERO / FIRST VIEW ========== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+
+    <!-- LEFT: Phone Mockup -->
+    <div class="hero-left">
+      <img src="/images/phone_mockup.png" alt="動画講座をスマホで視聴するイメージ" class="phone-mockup" width="420" height="420">
+      <div class="play-hint">
+        <span class="arrow">▶</span>
+        <span>登録後すぐに動画を視聴できます</span>
       </div>
-    </a>
-    
-    <div class="gifts">
-      <p style="color: #C25555; text-align: center; margin-bottom: 25px; font-size: 1.3em;">🎁 豪華3大プレゼント</p>
-      
-      <div class="gift-item">
-        <img src="/images/gift_01_video.png" alt="限定動画講座">
-        <div class="gift-text">
-          <p style="margin: 0;">① 限定動画講座</p>
-          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">腰痛、むくみ、お腹の張り、恥骨痛…。「妊娠中だから仕方ない」と我慢していませんか？ マイナートラブルが治らない「本当の理由」と、自宅でできる根本的なケア法を現役助産師がわかりやすく解説します。</p>
+    </div>
+
+    <!-- RIGHT: Copy + Form -->
+    <div class="hero-right">
+      <span class="tag-label">🎁 妊婦さん限定 無料プレゼント</span>
+
+      <h1 class="hero-headline">
+        <span class="accent">「妊娠中だから仕方ない…」</span><br>
+        は<span class="mistake">大きな間違い</span>です。
+      </h1>
+
+      <p class="hero-sub">
+        腰痛、むくみ、お腹の張り、恥骨痛…<br>
+        現役助産師が教える<strong>「根本ケア」</strong>の方法を<br>限定動画＋レポートで無料公開中。
+      </p>
+
+      <!-- Registration Form -->
+      <div class="form-card" id="form">
+        <h3>今すぐ無料で受け取る</h3>
+        <p class="form-sub">メールアドレスだけで30秒で完了</p>
+
+        <div class="form-gifts">
+          <div class="form-gift-badge"><span class="gift-icon">🎬</span> 限定動画講座</div>
+          <div class="form-gift-badge"><span class="gift-icon">📄</span> 限定レポート</div>
+          <div class="form-gift-badge"><span class="gift-icon">🍼</span> 育児物品ガイド</div>
         </div>
-      </div>
 
-      <div class="gift-item">
-        <img src="/images/gift_02_report.png" alt="限定レポート">
-        <div class="gift-text">
-          <p style="margin: 0;">② 限定レポート</p>
-          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">「妊娠中にやっておくべき子供の知能を高める7つの習慣」— 食事、睡眠、運動、胎教など、科学的根拠に基づいた7つの習慣を具体的にまとめました。お腹の中にいる今だからこそできることがあります。</p>
-        </div>
-      </div>
-
-      <div class="gift-item">
-        <img src="/images/gift_03_products.png" alt="育児物品 徹底解説">
-        <div class="gift-text">
-          <p style="margin: 0;">③ おすすめ母子のための育児物品 徹底解説</p>
-          <p style="margin: 4px 0 0 0; font-weight: 400; font-size: 0.95em;">寝床用品、抱っこ紐、ベビーカー、チャイルドシートなど、自分に合ったグッズを選ぶ方法をご紹介。人気だけど実は赤ちゃんに良くないものについての解説も。</p>
-        </div>
+        <form action="https://ai.fastfunnel.net/r/ifcnHa72Bua0/register?mtid=b5wUfAyD5jXM" method="post" id="registration-form">
+          <div class="form-group">
+            <label for="mail">メールアドレス <span class="required">必須</span></label>
+            <input id="mail" type="email" name="mail" required placeholder="example@email.com" autocomplete="email">
+          </div>
+          <button type="submit" class="submit-btn" id="submit-button">無料で今すぐ受け取る →</button>
+          <p class="form-privacy">ご登録の方には助産師ちるのメールマガジンをお届けします。個人情報は厳重に管理し、配信停止はいつでも可能です。icloud.com、me.com、mac.com、hotmailはメールが届かないため登録できません。</p>
+          <div class="form-trust">
+            <div class="trust-item"><span class="trust-icon">🔒</span> SSL暗号化</div>
+            <div class="trust-item"><span class="trust-icon">🛡️</span> スパム配信なし</div>
+            <div class="trust-item"><span class="trust-icon">✉️</span> いつでも解除OK</div>
+          </div>
+        </form>
       </div>
     </div>
 
-    <a href="#form" class="btn">今すぐ無料で受け取る</a>
+  </div>
+</section>
 
-    <h2 style="text-align: center; margin-top: 60px; color: #555;">「もっと早く知りたかった！」<br>喜びの声が続出</h2>
-    
-    <!-- 声の背景には他のスライドの背景イラストを活用 -->
-    <div class="voice" style="background-image: url('/images/scene_012.jpg');">
-      <div class="voice-inner">
-        <p>「むくみやお腹の張りがなくなり、夜もぐっすり眠れるようになりました！」（妊娠7ヶ月・Aさん）</p>
-      </div>
-    </div>
-    <div class="voice" style="background-image: url('/images/scene_013.jpg');">
-      <div class="voice-inner">
-        <p>「妊娠線もできず、産後すぐにお腹が引っ込んで周りに驚かれました！」（産後3ヶ月・Bさん）</p>
-      </div>
-    </div>
-    <div class="voice" style="background-image: url('/images/scene_014.jpg');">
-      <div class="voice-inner">
-        <p>「整体に月に数万円かけても治らなかった腰痛が、自宅でのケアでスッキリしました！」（妊娠8ヶ月・Cさん）</p>
-      </div>
-    </div>
-    
-    <div class="profile">
-      <h2>プロフィール</h2>
-      <div class="profile-content">
-        <div class="profile-img"></div>
+<!-- ========== GIFT DETAILS ========== -->
+<section class="section" id="gifts">
+  <div class="section-inner">
+    <h2>🎁 豪華3大プレゼントの内容</h2>
+
+    <div class="gifts-grid">
+      <div class="gift-card">
+        <img src="/images/gift_01_video.png" alt="限定動画講座" loading="lazy">
         <div>
-          <h3 style="margin-top:0; color: #555;">助産師 ちる</h3>
-          <ul style="padding-left: 20px; margin-bottom: 20px; color: #444;">
+          <span class="gift-num">1</span>
+          <p class="gift-title">限定動画講座</p>
+          <p class="gift-desc">腰痛、むくみ、お腹の張り、恥骨痛…。「妊娠中だから仕方ない」と我慢していませんか？ マイナートラブルが治らない「本当の理由」と、自宅でできる根本的なケア法を現役助産師がわかりやすく解説します。</p>
+        </div>
+      </div>
+
+      <div class="gift-card">
+        <img src="/images/gift_02_report.png" alt="限定レポート" loading="lazy">
+        <div>
+          <span class="gift-num">2</span>
+          <p class="gift-title">限定レポート</p>
+          <p class="gift-desc">「妊娠中にやっておくべき子供の知能を高める7つの習慣」— 食事、睡眠、運動、胎教など、科学的根拠に基づいた7つの習慣を具体的にまとめました。お腹の中にいる今だからこそできることがあります。</p>
+        </div>
+      </div>
+
+      <div class="gift-card">
+        <img src="/images/gift_03_products.png" alt="育児物品 徹底解説" loading="lazy">
+        <div>
+          <span class="gift-num">3</span>
+          <p class="gift-title">おすすめ母子のための育児物品 徹底解説</p>
+          <p class="gift-desc">寝床用品、抱っこ紐、ベビーカー、チャイルドシートなど、自分に合ったグッズを選ぶ方法をご紹介。人気だけど実は赤ちゃんに良くないものについての解説も。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section" id="voices">
+  <div class="section-inner">
+    <h2>「もっと早く知りたかった！」<br>喜びの声が続出</h2>
+
+    <div class="voices-grid">
+      <div class="voice-card" style="background-image: url('/images/scene_012.jpg');">
+        <div class="voice-card-inner">
+          <p>「むくみやお腹の張りがなくなり、夜もぐっすり眠れるようになりました！」（妊娠7ヶ月・Aさん）</p>
+        </div>
+      </div>
+      <div class="voice-card" style="background-image: url('/images/scene_013.jpg');">
+        <div class="voice-card-inner">
+          <p>「妊娠線もできず、産後すぐにお腹が引っ込んで周りに驚かれました！」（産後3ヶ月・Bさん）</p>
+        </div>
+      </div>
+      <div class="voice-card" style="background-image: url('/images/scene_014.jpg');">
+        <div class="voice-card-inner">
+          <p>「整体に月に数万円かけても治らなかった腰痛が、自宅でのケアでスッキリしました！」（妊娠8ヶ月・Cさん）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROFILE ========== -->
+<section class="section" id="profile">
+  <div class="section-inner">
+    <h2>プロフィール</h2>
+    <div class="profile-card">
+      <div class="profile-content">
+        <div class="profile-img" role="img" aria-label="助産師ちるのプロフィール画像"></div>
+        <div>
+          <h3>助産師 ちる</h3>
+          <ul>
             <li>現役産婦人科助産師（年間2000件の出産がある病院で勤務）</li>
             <li>累計サポート実績：20,000名以上</li>
             <li><strong>現在は私自身も初めて出産を経験し、育休中です</strong></li>
           </ul>
-          <p style="font-weight: 600; color: #C25555;">「妊婦さんの痛みを、当たり前にしたくない」</p>
-          <p>病院で毎日多くの妊婦さんと接する中で、「マイナートラブルは病気じゃないから様子見で」と根本的なケアをしてもらえないママたちを数多く見てきました。</p>
-          <p>当事者になって、ママたちの辛さがより深く分かるようになりました。「対症療法ではなく、自宅でできる根本的なケアを届けたい」。その想いで、この動画とレポートを作成しました。あなたが笑顔でマタニティライフを送り、元気な赤ちゃんと出会えることを心から応援しています。</p>
+          <p class="profile-quote">「妊婦さんの痛みを、当たり前にしたくない」</p>
+          <p class="profile-bio">病院で毎日多くの妊婦さんと接する中で、「マイナートラブルは病気じゃないから様子見で」と根本的なケアをしてもらえないママたちを数多く見てきました。</p>
+          <p class="profile-bio" style="margin-top: 12px;">当事者になって、ママたちの辛さがより深く分かるようになりました。「対症療法ではなく、自宅でできる根本的なケアを届けたい」。その想いで、この動画とレポートを作成しました。あなたが笑顔でマタニティライフを送り、元気な赤ちゃんと出会えることを心から応援しています。</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 登録フォーム -->
-    <div id="form" style="margin-top: 60px; background: rgba(255,255,255,0.95); padding: 40px 20px; border-radius: 12px; text-align: center; border: 2px solid #E89A9A;">
-      <h3 style="color: #C25555; margin-top:0; font-size: 22px;">無料プレゼント受け取りフォーム</h3>
-      <p style="font-weight: 600;">妊娠中のからだは、日々変化しています。<br>早めのケアが、あなたと赤ちゃんの毎日をもっと心地よくしてくれます。</p>
-      
-      <form action="https://ai.fastfunnel.net/r/ifcnHa72Bua0/register?mtid=b5wUfAyD5jXM" method="post" style="margin-top: 25px;">
-        <div style="margin-bottom: 15px;">
-          <label for="mail" style="display: block; font-weight: 600; margin-bottom: 8px; color: #555; text-align: left;">メールアドレス <span style="background: #C25555; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 5px;">必須</span></label>
-          <input id="mail" type="email" name="mail" required placeholder="example@email.com" style="width: 100%; padding: 14px 16px; border: 2px solid #E0C8C8; border-radius: 8px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: border 0.2s;" onfocus="this.style.borderColor='#D47A7A'" onblur="this.style.borderColor='#E0C8C8'">
+<!-- ========== BOTTOM CTA ========== -->
+<section class="bottom-cta" id="bottom-form">
+  <div class="bottom-cta-inner">
+    <div class="bottom-form-card">
+      <h3>無料プレゼント受け取りフォーム</h3>
+      <p class="form-motivate">妊娠中のからだは、日々変化しています。<br>早めのケアが、あなたと赤ちゃんの毎日をもっと心地よくしてくれます。</p>
+
+      <form action="https://ai.fastfunnel.net/r/ifcnHa72Bua0/register?mtid=b5wUfAyD5jXM" method="post" id="bottom-registration-form">
+        <div class="form-group">
+          <label for="mail-bottom">メールアドレス <span class="required">必須</span></label>
+          <input id="mail-bottom" type="email" name="mail" required placeholder="example@email.com" autocomplete="email">
         </div>
-        <button type="submit" style="width: 100%; padding: 18px; background: #D47A7A; color: #fff; border: none; border-radius: 40px; font-size: 20px; font-weight: 600; font-family: inherit; cursor: pointer; box-shadow: 0 6px 15px rgba(212,122,122,0.4); transition: 0.2s;" onmouseover="this.style.background='#C25555';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D47A7A';this.style.transform='translateY(0)'">無料で今すぐ受け取る</button>
-        <p style="font-size: 11px; color: #888; margin-top: 14px; text-shadow: none; line-height: 1.7; text-align: left;">ご登録の方には助産師ちるのメールマガジンをお届けします。個人情報は厳重に管理し、配信停止はいつでも可能です。icloud.com、me.com、mac.com、hotmailはメールが届かないため登録できません。メールが迷惑メールフォルダに届く場合がありますので、受信ボックスに届かない場合はそちらもご確認ください。</p>
+        <button type="submit" class="submit-btn" id="bottom-submit-button">無料で今すぐ受け取る →</button>
+        <p class="form-privacy">ご登録の方には助産師ちるのメールマガジンをお届けします。個人情報は厳重に管理し、配信停止はいつでも可能です。icloud.com、me.com、mac.com、hotmailはメールが届かないため登録できません。メールが迷惑メールフォルダに届く場合がありますので、受信ボックスに届かない場合はそちらもご確認ください。</p>
+        <div class="form-trust">
+          <div class="trust-item"><span class="trust-icon">🔒</span> SSL暗号化</div>
+          <div class="trust-item"><span class="trust-icon">🛡️</span> スパム配信なし</div>
+          <div class="trust-item"><span class="trust-icon">✉️</span> いつでも解除OK</div>
+        </div>
       </form>
     </div>
-    
   </div>
-</div>
-<footer style="text-align:center;padding:24px 16px;font-size:12px;color:#999;border-top:1px solid #eee;margin-top:40px">
-  <a href="https://www.cross-over-airline.com/tokusyoho/" target="_blank" style="color:#999;text-decoration:none;margin:0 12px">特定商取引法に基づく表記</a>｜<a href="https://www.cross-over-airline.com/privacy/" target="_blank" style="color:#999;text-decoration:none;margin:0 12px">プライバシーポリシー</a>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <a href="https://www.cross-over-airline.com/tokusyoho/" target="_blank" rel="noopener">特定商取引法に基づく表記</a>｜<a href="https://www.cross-over-airline.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
   <p style="margin-top:8px">© 助産師ちる</p>
 </footer>
 
